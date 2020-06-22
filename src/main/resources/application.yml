@@ -1,0 +1,7 @@
+app:
+  datasource:
+    database-name: sql_gen_db
+    jdbc-url: jdbc:postgresql://localhost:5432/${app.datasource.database-name}
+    username: postgres
+    password: sstrac
+    pool-size: 30
