@@ -10,17 +10,13 @@ public class Table {
     private final List<String> tableFields;
 
     public Table(@JsonProperty("tableName") String tableName,
-                 @JsonProperty("tableFields") String[] tableFields){
+                 @JsonProperty("tableFields") List<String> tableFields){
         this.tableName = tableName;
-        this.tableFields = new ArrayList<String>();
-        for(String field: tableFields ){
-            this.tableFields.add(field);
-        }
+        this.tableFields = tableFields;
     }
 
     public static Table newTable(String tableName){
-        String[] emptyFields = {};
-        return new Table(tableName, emptyFields);
+        return new Table(tableName, new ArrayList<>());
     }
 
     public String getTableName(){
